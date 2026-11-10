@@ -1,6 +1,6 @@
 {
   "name": "whygit",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Git blame tells you who. whygit tells you why. Turn git history into cited, agent-readable context.",
   "type": "module",
   "bin": {
