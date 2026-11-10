@@ -1,0 +1,43 @@
+name: Bad explanation
+description: A whygit answer cites the wrong commit or the wrong reason
+title: 'why: '
+labels: ['quality']
+body:
+  - type: input
+    id: repo
+    attributes:
+      label: Repository
+      description: Public repo and commit you ran this on
+      placeholder: psf/requests @ 3c7baaa
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command
+      render: shell
+      placeholder: whygit why "cookie jar"
+    validations:
+      required: true
+  - type: textarea
+    id: got
+    attributes:
+      label: What it answered
+      description: Paste the output lines you think are wrong
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: expect
+    attributes:
+      label: What the real reason is
+      description: The commit sha or sentence you believe is the actual decision
+    validations:
+      required: false
+  - type: input
+    id: version
+    attributes:
+      label: whygit version
+      description: Output of `whygit --version`
+    validations:
+      required: true
