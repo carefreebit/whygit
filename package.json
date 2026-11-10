@@ -39,11 +39,11 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/USER/whygit.git"
+    "url": "git+https://github.com/carefreebit/whygit.git"
   },
-  "homepage": "https://github.com/USER/whygit#readme",
+  "homepage": "https://github.com/carefreebit/whygit#readme",
   "bugs": {
-    "url": "https://github.com/USER/whygit/issues"
+    "url": "https://github.com/carefreebit/whygit/issues"
   },
   "publishConfig": {
     "access": "public"

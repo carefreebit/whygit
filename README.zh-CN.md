@@ -8,7 +8,7 @@
 文件、行号、commit、作者、日期，一个都不少。
 
 [![npm](https://img.shields.io/npm/v/whygit?color=cb3837)](https://www.npmjs.com/package/whygit)
-[![tests](https://github.com/whygit/whygit/actions/workflows/ci.yml/badge.svg)](https://github.com/whygit/whygit/actions/workflows/ci.yml)
+[![tests](https://github.com/carefreebit/whygit/actions/workflows/ci.yml/badge.svg)](https://github.com/carefreebit/whygit/actions/workflows/ci.yml)
 [![node](https://img.shields.io/badge/node-%3E%3D22.5-3c873a)](https://nodejs.org)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-ready-6b46c1)](#交给你的-agent)
@@ -241,7 +241,7 @@ whygit 不解释这句话，只引用它。如果 message 什么都没说，这�
 ## 参与贡献
 
 ```bash
-git clone https://github.com/whygit/whygit && cd whygit
+git clone https://github.com/carefreebit/whygit && cd whygit
 npm test          # 17 个测试，不联网
 npm run lint
 node bin/whygit.js why "..." --cwd /path/to/any/repo
@@ -259,6 +259,6 @@ MIT，见 [LICENSE](LICENSE)。
 
 如果 whygit 帮你拦下了一次「删掉承重代码」的操作，点个 star，能让下一个人找到它。
 
-**[⭐ Star whygit](https://github.com/whygit/whygit)**
+**[⭐ Star whygit](https://github.com/carefreebit/whygit)**
 
 </div>

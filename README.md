@@ -8,7 +8,7 @@ Point it at any repository. It turns the reasons already buried in git history
 into answers you and your coding agent can cite — file, line, commit, author, date.
 
 [![npm](https://img.shields.io/npm/v/whygit?color=cb3837)](https://www.npmjs.com/package/whygit)
-[![tests](https://github.com/whygit/whygit/actions/workflows/ci.yml/badge.svg)](https://github.com/whygit/whygit/actions/workflows/ci.yml)
+[![tests](https://github.com/carefreebit/whygit/actions/workflows/ci.yml/badge.svg)](https://github.com/carefreebit/whygit/actions/workflows/ci.yml)
 [![node](https://img.shields.io/badge/node-%3E%3D22.5-3c873a)](https://nodejs.org)
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-ready-6b46c1)](#give-it-to-your-agent)
@@ -251,7 +251,7 @@ index under `.git/`. History is read-only.
 ## Contributing
 
 ```bash
-git clone https://github.com/whygit/whygit && cd whygit
+git clone https://github.com/carefreebit/whygit && cd whygit
 npm test          # 17 tests, no network
 npm run lint
 node bin/whygit.js why "..." --cwd /path/to/any/repo
@@ -271,6 +271,6 @@ MIT. See [LICENSE](LICENSE).
 If whygit saved you from deleting a load-bearing line, a star helps the next person
 find it.
 
-**[⭐ Star whygit](https://github.com/whygit/whygit)**
+**[⭐ Star whygit](https://github.com/carefreebit/whygit)**
 
 </div>
