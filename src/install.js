@@ -89,7 +89,7 @@ export function cmdInstall(args, flags) {
   for (const f of written) console.log('  ' + c.green('\u2713') + ' ' + path.relative(cwd, f));
   console.log('');
   console.log(c.gray('  Restart your editor / agent session to pick up the MCP server.'));
-  if (!flags.local) console.log(c.gray('  Using npx. Add --local to point at the whygit binary on your PATH instead.'));
+  if (!flags.local) console.log(c.gray('  Using npx whygit. Add --local to point at an installed binary instead.'));
   console.log('');
   return 0;
 }
