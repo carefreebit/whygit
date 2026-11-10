@@ -1,0 +1,6 @@
+node_modules/
+.whygit/
+*.log
+.DS_Store
+site/dist/
+.tmp/

@@ -1,0 +1,43 @@
+{
+  "name": "whygit",
+  "version": "0.1.0",
+  "description": "Git blame tells you who. whygit tells you why. Turn git history into cited, agent-readable context.",
+  "type": "module",
+  "bin": {
+    "whygit": "bin/whygit.js"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  },
+  "files": [
+    "bin",
+    "src",
+    "README.md",
+    "README.zh-CN.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test test/",
+    "lint": "node scripts/lint.js",
+    "demo": "node scripts/demo.js"
+  },
+  "keywords": [
+    "git",
+    "blame",
+    "archaeology",
+    "why",
+    "mcp",
+    "ai-agents",
+    "claude-code",
+    "codex",
+    "cursor",
+    "context",
+    "knowledge-base"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/USER/whygit.git"
+  },
+  "author": "lxh"
+}
