@@ -19,21 +19,11 @@
 
 ---
 
-```console
-$ whygit why "cookie jar"
+<p align="center">
+  <img src="docs/demo.svg" alt="whygit why &quot;cookie jar&quot; 终端演示" width="900">
+</p>
 
-  whygit  psf/requests  4,884 commits
-  ────────────────────────────────────
-
-   1. Copy a PreparedRequest's CookieJar reliably
-    2015-04-06 · 36093e69 · Ian Cordasco · change · 100% match
-
-    By adding _copy_cookie_jar we can reliably copy cookie jars so that we have an
-    actual copy instead of the same instance on different prepared requests.
-
-    requests/cookies.py  requests/models.py
-    → https://github.com/psf/requests/commit/36093e69c70b9b24dd1e007befa35ad891313f51
-```
+<p align="center"><sub>真实输出：在 <code>psf/requests</code> 上执行 <code>whygit why "cookie jar"</code> —— 4,884 个 commit 索引 3 秒，回答 21 毫秒。</sub></p>
 
 这个答案一直躺在仓库里——2015 年某次 commit 的正文，此后九年没人读过。
 whygit 用 21 毫秒把它找出来：没有大模型，没有 API key，没有网络请求。
