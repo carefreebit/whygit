@@ -1,0 +1,46 @@
+name: ci
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: test (node ${{ matrix.node }})
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        node: [22, 24]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node }}
+      - run: npm test
+      - run: npm run lint
+
+  dogfood:
+    name: explain this repository
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Index history
+        run: node bin/whygit.js init --full
+      - name: Ask why
+        run: node bin/whygit.js why "ranking" -n 3
+      - name: Generate WHYLOG.md
+        run: node bin/whygit.js whylog --write
+      - uses: actions/upload-artifact@v4
+        with:
+          name: whylog
+          path: WHYLOG.md

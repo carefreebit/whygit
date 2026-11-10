@@ -12,14 +12,14 @@
   "files": [
     "bin",
     "src",
+    "docs",
     "README.md",
     "README.zh-CN.md",
     "LICENSE"
   ],
   "scripts": {
-    "test": "node --test test/",
-    "lint": "node scripts/lint.js",
-    "demo": "node scripts/demo.js"
+    "test": "node --test test/signals.test.js test/index.test.js",
+    "lint": "node scripts/lint.js"
   },
   "keywords": [
     "git",
@@ -32,12 +32,21 @@
     "codex",
     "cursor",
     "context",
-    "knowledge-base"
+    "knowledge-base",
+    "code-review",
+    "onboarding"
   ],
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/USER/whygit.git"
+  },
+  "homepage": "https://github.com/USER/whygit#readme",
+  "bugs": {
+    "url": "https://github.com/USER/whygit/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "author": "lxh"
 }

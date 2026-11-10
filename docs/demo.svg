@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="570" viewBox="0 0 900 570" role="img" aria-label="whygit terminal demo">
+<defs><linearGradient id="bg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#161b22"/><stop offset="1" stop-color="#0d1117"/></linearGradient></defs>
+<rect width="900" height="570" rx="14" fill="url(#bg)" stroke="#30363d"/>
+<rect width="900" height="42" rx="14" fill="#21262d"/><rect y="28" width="900" height="14" fill="#21262d"/>
+<circle cx="24" cy="21" r="6" fill="#ff5f56"/><circle cx="46" cy="21" r="6" fill="#ffbd2e"/><circle cx="68" cy="21" r="6" fill="#27c93f"/>
+<text x="450" y="26" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="12" fill="#8b949e">whygit — psf/requests</text>
+<text x="30" y="74" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#7ee787" font-weight="600" xml:space="preserve">$ whygit why "cookie jar"</text>
+<text x="30" y="116" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#e6edf3" font-weight="600" xml:space="preserve">  whygit  psf/requests  4,884 commits</text>
+<text x="30" y="137" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#30363d" xml:space="preserve">  ────────────────────────────────────</text>
+<text x="30" y="200" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#f0f6fc" font-weight="600" xml:space="preserve">   1. Copy a PreparedRequest's CookieJar reliably</text>
+<text x="30" y="221" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#8b949e" xml:space="preserve">    2015-04-06 · 36093e69 · Ian Cordasco · change · 100% match</text>
+<text x="30" y="263" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#c9d1d9" xml:space="preserve">    By adding _copy_cookie_jar we can reliably copy cookie jars so that we have an</text>
+<text x="30" y="284" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#c9d1d9" xml:space="preserve">    actual copy instead of the same instance on different prepared requests.</text>
+<text x="30" y="326" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#79c0ff" xml:space="preserve">    requests/cookies.py  requests/models.py</text>
+<text x="30" y="347" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#58a6ff" text-decoration="underline" xml:space="preserve">    → https://github.com/psf/requests/commit/36093e69c70b9b24dd1e007befa35ad891313f51</text>
+<text x="30" y="389" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#f0f6fc" font-weight="600" xml:space="preserve">   2. Test and perfection for cookie handling.</text>
+<text x="30" y="410" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#8b949e" xml:space="preserve">    2013-02-11 · 2e316961 · Ian Cordasco · fix · 71% match</text>
+<text x="30" y="452" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#c9d1d9" xml:space="preserve">    I also fixed up some of the RequestsCookieJar methods so using</text>
+<text x="30" y="473" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#c9d1d9" xml:space="preserve">    jar.update(other_jar) works without a problem.</text>
+<text x="30" y="515" font-family="ui-monospace, SFMono-Regular, Menlo, Consolas, monospace" font-size="13.5" fill="#8b949e" xml:space="preserve">  2 of 15 decisions · 21ms · whygit why "cookie jar"</text>
+</svg>
