@@ -7,7 +7,7 @@ import { lsFiles } from './git.js';
 
 export function cmdCursed(args, flags) {
   const ctx = loadContext({ cwd: flags.cwd });
-  const n = flags.n || 15;
+  const n = Number(flags.limit || flags.n) || 15;
   const alive = new Set(lsFiles(ctx.cwd));
   const scored = topRisk(ctx.db, Math.max(n * 6, 120));
   const rows = scored.filter(function (r) { return alive.has(r.path); }).slice(0, n);
