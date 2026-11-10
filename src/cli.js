@@ -1,5 +1,8 @@
 /** whygit command line. */
 import process from 'node:process';
+import { readFileSync } from 'node:fs';
+import { dirname, join } from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { c, width } from './util.js';
 import { cmdWhy } from './cmd-why.js';
 import { cmdStory } from './cmd-story.js';
@@ -12,7 +15,9 @@ import { loadContext, repoLabel } from './context.js';
 import { buildWhylog, writeWhylog } from './whylog.js';
 import { header } from './ui.js';
 
-const VERSION = '0.1.0';
+const VERSION = JSON.parse(
+  readFileSync(join(dirname(fileURLToPath(import.meta.url)), '..', 'package.json'), 'utf8'),
+).version;
 
 const HELP = [
   '',
