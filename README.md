@@ -1,11 +1,11 @@
-<div align="center">
+﻿<div align="center">
 
 # whygit
 
 **Git blame tells you *who*. whygit tells you *why*.**
 
 Point it at any repository. It turns the reasons already buried in git history
-into answers you and your coding agent can cite — file, line, commit, author, date.
+into answers you and your coding agent can cite 鈥?file, line, commit, author, date.
 
 [![npm](https://img.shields.io/npm/v/whygit?color=cb3837)](https://www.npmjs.com/package/whygit)
 [![tests](https://github.com/carefreebit/whygit/actions/workflows/ci.yml/badge.svg)](https://github.com/carefreebit/whygit/actions/workflows/ci.yml)
@@ -13,19 +13,19 @@ into answers you and your coding agent can cite — file, line, commit, author, 
 [![license](https://img.shields.io/badge/license-MIT-blue)](LICENSE)
 [![MCP](https://img.shields.io/badge/MCP-ready-6b46c1)](#give-it-to-your-agent)
 
-[中文](README.zh-CN.md) · [Quickstart](#quickstart) · [Commands](#commands) · [Agents](#give-it-to-your-agent) · [How it works](#how-it-works)
+[涓枃](README.zh-CN.md) 路 [Quickstart](#quickstart) 路 [Commands](#commands) 路 [Agents](#give-it-to-your-agent) 路 [How it works](#how-it-works)
 
 </div>
 
 ---
 
 <p align="center">
-  <img src="docs/demo.svg" alt="whygit why &quot;cookie jar&quot; in a terminal" width="900">
+  <img src="https://raw.githubusercontent.com/carefreebit/whygit/main/docs/demo.svg" alt="whygit why &quot;cookie jar&quot; in a terminal" width="900">
 </p>
 
-<p align="center"><sub>Real output: <code>whygit why "cookie jar"</code> on <code>psf/requests</code> — 4,884 commits indexed in 3s, answered in 21ms.</sub></p>
+<p align="center"><sub>Real output: <code>whygit why "cookie jar"</code> on <code>psf/requests</code> 鈥?4,884 commits indexed in 3s, answered in 21ms.</sub></p>
 
-That answer existed all along — in a commit body from 2015 that nobody has read since.
+That answer existed all along 鈥?in a commit body from 2015 that nobody has read since.
 whygit found it in 21 milliseconds, without an LLM, an API key, or a network call.
 
 ## The problem
@@ -38,7 +38,7 @@ redundant. A guard that seems paranoid. A `sleep(2)` that looks like laziness.
 - LLM summaries of history **invent plausible reasons**. In a codebase, a plausible
   wrong reason is worse than no reason.
 - Coding agents are the worst affected: they rewrite the guard, delete the retry, and
-  the bug comes back six months later — because nothing told them the line was load-bearing.
+  the bug comes back six months later 鈥?because nothing told them the line was load-bearing.
 
 whygit reads what your repository already wrote down, extracts the sentences that
 actually explain a decision, and makes them retrievable in the two places that matter:
@@ -68,7 +68,7 @@ it is incremental: new commits are picked up automatically on the next run.
 | `whygit why <words>` | Why does this behaviour exist? Ranked decisions with citations. |
 | `whygit why <file>:<line>` | Why is *this line* still here? Blame + the decision behind it + how much of that change is still alive. |
 | `whygit story <file>` | The biography of one file: birth, commits per year, the chapters that mattered, who kept it alive. |
-| `whygit cursed` | Ranked risk map: churn × fix density × author spread × freshness. Read before refactoring. |
+| `whygit cursed` | Ranked risk map: churn 脳 fix density 脳 author spread 脳 freshness. Read before refactoring. |
 | `whygit whylog --write` | Generate `WHYLOG.md`: load-bearing decisions + cursed files, in Markdown. |
 | `whygit check --base origin/main` | CI gate: what fraction of newly added lines trace to a commit that said why. |
 | `whygit mcp` | MCP server over stdio for Claude Code, Cursor, Codex, and any MCP client. |
@@ -83,30 +83,30 @@ Every command takes `--json` for scripting, and `--cwd <path>` to point at anoth
 $ whygit why src/requests/models.py:120
 
    1. basics working
-    2012-12-15 · 366e8e84 · Kenneth Reitz · change
+    2012-12-15 路 366e8e84 路 Kenneth Reitz 路 change
     line 120 is 78 lines of this change, still in HEAD
 
    2. Add hasattr checks for remaining protocol isinstance checks (#7505)
-    2026-06-09 · 6f66281a · change
+    2026-06-09 路 6f66281a 路 change
 ```
 
 The line itself is unremarkable. What matters is that 78 lines around it are still
-the original 2012 change — so the surrounding shape is load-bearing, not incidental.
+the original 2012 change 鈥?so the surrounding shape is load-bearing, not incidental.
 
 ### `story <file>`
 
 ```console
 $ whygit story src/requests/models.py
 
-  born 2011-05-14 · package refactor
+  born 2011-05-14 路 package refactor
 
-    2011  ██████████████████████████████████······  217
-    2012  ████████████████████████████████████████  254
-    2013  ██████████████··························   86
+    2011  鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅路路路路路路  217
+    2012  鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅  254
+    2013  鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅路路路路路路路路路路路路路路路路路路路路路路路路路路   86
     ...
 
-  717 commits · 202 authors · 154 fixes · 0 TODO markers
-  ─── the plot ──────────────────────────────────────────────────
+  717 commits 路 202 authors 路 154 fixes 路 0 TODO markers
+  鈹€鈹€鈹€ the plot 鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€鈹€
 
   2015-04-06  Copy a PreparedRequest's CookieJar reliably
             By adding _copy_cookie_jar we can reliably copy cookie jars so that we
@@ -119,12 +119,12 @@ $ whygit story src/requests/models.py
 ```console
 $ whygit cursed
 
-   1  src/requests/models.py          ██████████████    8.1  717 commits · 202 authors · 154 fixes
-   2  src/requests/sessions.py        █████████████·    7.5  334 commits · 110 authors · 79 fixes
-   3  tests/test_requests.py          ████████████··    7.2  366 commits · 104 authors · 76 fixes
+   1  src/requests/models.py          鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅    8.1  717 commits 路 202 authors 路 154 fixes
+   2  src/requests/sessions.py        鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻埪?   7.5  334 commits 路 110 authors 路 79 fixes
+   3  tests/test_requests.py          鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅鈻堚枅路路    7.2  366 commits 路 104 authors 路 76 fixes
 ```
 
-Not a code-quality judgement — a map of where history is dense enough that a
+Not a code-quality judgement 鈥?a map of where history is dense enough that a
 confident rewrite is likely to be wrong.
 
 ## Give it to your agent
@@ -159,18 +159,17 @@ Before changing a line you do not understand, call `why_line` (MCP: whygit).
 If a past decision contradicts your plan, say so before editing.
 ```
 
-### WHYLOG.md — history your agent reads without being asked
+### WHYLOG.md 鈥?history your agent reads without being asked
 
 `whygit whylog --write` produces a Markdown file that is small enough to live in a
 repo and specific enough to change a decision:
 
-- **Load-bearing decisions** — ranked, each with the verbatim reason, date, commit, author, and the files it touches.
-- **The cursed files** — a table of where history is thickest.
-- **House rule** — the one-line convention (`WHY: ...`) that makes future commits explain themselves.
+- **Load-bearing decisions** 鈥?ranked, each with the verbatim reason, date, commit, author, and the files it touches.
+- **The cursed files** 鈥?a table of where history is thickest.
+- **House rule** 鈥?the one-line convention (`WHY: ...`) that makes future commits explain themselves.
 
 It is generated from git, never hand-edited, and it diffs cleanly in review.
-Commit it, and every agent that starts in the repo gets the context for free —
-no MCP required.
+Commit it, and every agent that starts in the repo gets the context for free 鈥?no MCP required.
 
 ### CI gate
 
@@ -185,25 +184,18 @@ It is a nudge, not a linter: the fix is one sentence in the commit body.
 
 ```text
 git log (two passes: metadata + numstat)
-        │
-        ▼
-  signals: strip trailers, drop bot noise, de-duplicate squash-merge subjects,
+        鈹?        鈻?  signals: strip trailers, drop bot noise, de-duplicate squash-merge subjects,
            keep sentences that contain a reason ("because", "so that", "to avoid",
-           "由于", "避免", "回滚" ...)
-        │
-        ▼
-  SQLite  .git/whygit/index.db   commits · files · decisions · FTS5 · risk
-        │
-        ▼
-  ranking: BM25 × confidence × churn × recency × fix-density × noise penalties
-        │
-        ├── whygit why / story / cursed        (terminal)
-        ├── whygit whylog                      (WHYLOG.md)
-        └── whygit mcp                         (agents)
+           "鐢变簬", "閬垮厤", "鍥炴粴" ...)
+        鈹?        鈻?  SQLite  .git/whygit/index.db   commits 路 files 路 decisions 路 FTS5 路 risk
+        鈹?        鈻?  ranking: BM25 脳 confidence 脳 churn 脳 recency 脳 fix-density 脳 noise penalties
+        鈹?        鈹溾攢鈹€ whygit why / story / cursed        (terminal)
+        鈹溾攢鈹€ whygit whylog                      (WHYLOG.md)
+        鈹斺攢鈹€ whygit mcp                         (agents)
 ```
 
 **What a "decision" is:** a commit whose message contains a sentence explaining a
-choice. whygit does not interpret that sentence — it quotes it. If the message says
+choice. whygit does not interpret that sentence 鈥?it quotes it. If the message says
 nothing, the decision has low confidence and ranks below the ones that do.
 
 **Why it can be fast:** the whole index is built from two `git log` passes, and
@@ -211,13 +203,13 @@ queries run against FTS5 in the same process. On a laptop, 4,884 commits index i
 ~3 seconds and a query takes ~20 ms. No network, no model, no cache to warm.
 
 **What it will not do:** invent a reason, summarise code, or judge quality. If the
-history is silent, whygit says so — silence is a finding too.
+history is silent, whygit says so 鈥?silence is a finding too.
 
 ## Compared to
 
 | | Answers "why" | Cites the source | Works offline | Agent-native |
 | --- | :---: | :---: | :---: | :---: |
-| `git blame` | no | — | yes | no |
+| `git blame` | no | 鈥?| yes | no |
 | `git log` | only if you already know where to look | yes | yes | no |
 | LLM-generated docs | sometimes | rarely | no | partly |
 | **whygit** | **yes** | **yes (sha + file + line)** | **yes** | **yes (MCP + WHYLOG.md)** |
@@ -246,7 +238,7 @@ index under `.git/`. History is read-only.
 - Rationale can only be as good as commit messages. whygit makes silence visible; it cannot fill it.
 - Very large histories (500k+ commits) index in minutes, not seconds.
 - Renames are followed by path, not by content similarity: a file moved twice may have two histories.
-- The ranking is heuristic. It is tuned to prefer cited reasons over churn, and it will still be wrong sometimes — each result shows its citations so you can check.
+- The ranking is heuristic. It is tuned to prefer cited reasons over churn, and it will still be wrong sometimes 鈥?each result shows its citations so you can check.
 
 ## Contributing
 
@@ -257,7 +249,7 @@ npm run lint
 node bin/whygit.js why "..." --cwd /path/to/any/repo
 ```
 
-Issues and PRs welcome — especially real-world ranking failures. Paste the query, the
+Issues and PRs welcome 鈥?especially real-world ranking failures. Paste the query, the
 repo, and what should have ranked first.
 
 ## License
@@ -271,6 +263,6 @@ MIT. See [LICENSE](LICENSE).
 If whygit saved you from deleting a load-bearing line, a star helps the next person
 find it.
 
-**[⭐ Star whygit](https://github.com/carefreebit/whygit)**
+**[猸?Star whygit](https://github.com/carefreebit/whygit)**
 
 </div>
