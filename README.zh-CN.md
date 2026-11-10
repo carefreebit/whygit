@@ -20,7 +20,7 @@
 ---
 
 <p align="center">
-  <img src="docs/demo.svg" alt="whygit why &quot;cookie jar&quot; 终端演示" width="900">
+  <img src="https://raw.githubusercontent.com/carefreebit/whygit/main/docs/demo.svg" alt="whygit why &quot;cookie jar&quot; 终端演示" width="900">
 </p>
 
 <p align="center"><sub>真实输出：在 <code>psf/requests</code> 上执行 <code>whygit why "cookie jar"</code> —— 4,884 个 commit 索引 3 秒，回答 21 毫秒。</sub></p>
